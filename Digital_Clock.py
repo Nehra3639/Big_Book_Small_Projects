@@ -2,6 +2,7 @@
  Displays a digital clock of the current time with a seven-segment display. Press SPACE-BAR to stop"""
 
 import sys, time
+import sevseg
 secondsLeft = 30
 
 try:
@@ -13,7 +14,7 @@ try:
         hours = str(currentTime.tm_hour % 12)
         if hours == '0':
             hours =  '12'  # 12-hour clocks show 12:00, not 00:00.
-        minutes = str((currentTime.tm_min % 3600) // 60)
+        minutes = str(currentTime.tm_min % 3600) // 60)
         seconds = str(currentTime.tm_sec % 60)
 
         # Get the digit strings from the sevseg module:
